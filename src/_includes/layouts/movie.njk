@@ -1,0 +1,42 @@
+{% extends 'layouts/index.njk' %}
+
+{% set previousPost = collections.movies | getPreviousCollectionItem(page) %}
+{% set nextPost = collections.movies | getNextCollectionItem(page) %}
+
+{% block title %}
+    {{ title }} | {{ super() }}
+{% endblock %}
+
+{% block content %}
+    <div class="movie">
+        <h1 class="title">{{ title }}</h1>
+
+        <div class="quote">
+            {{ quote | nl2br | safe }}
+        </div>
+
+        <div>
+            {{ content | safe }}
+
+            <div class="navigation">
+                <div>
+                    {% if previousPost %}
+                        <a href="{{ previousPost.url }}" class="prev item">
+                            <div class="dir">&larr; Prev</div>
+                            {{ previousPost.data.title }}
+                        </a>
+                    {% endif %}
+                </div>
+
+                <div>
+                    {% if nextPost %}
+                        <a href="{{ nextPost.url }}" class="next item">
+                            <div class="dir">Next &rarr;</div>
+                            {{ nextPost.data.title }}
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

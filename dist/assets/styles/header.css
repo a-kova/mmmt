@@ -1,0 +1,17 @@
+header {
+  display: block;
+  border-bottom: 1px solid #ECECEC;
+  text-align: center;
+}
+header .title {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  font-family: "Special Elite", cursive;
+  font-size: 22px;
+  text-transform: lowercase;
+}
+header .subtitle {
+  font-size: 14px;
+  color: var(--font-color-secondary);
+}

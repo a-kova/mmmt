@@ -1,0 +1,31 @@
+@import "utils/_variables";
+
+@import "layout/container";
+@import "layout/footer";
+@import "layout/header";
+@import "layout/main";
+
+@import "pages/index";
+@import "pages/movie";
+
+body {
+    background-color: var(--body-bg-color);
+    margin: 0;
+    color: var(--font-color);
+    letter-spacing: .2pt;
+    font-family: 'Baskerville', serif;
+    font-size: 18px;
+    line-height: 2;
+    transition: background-color .2s linear;
+}
+
+a {
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+h1, h2 {
+    line-height: 1;
+    font-family: 'Bebas Neue', cursive;
+    color: var(--heading-color);
+}

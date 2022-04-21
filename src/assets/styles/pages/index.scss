@@ -1,0 +1,24 @@
+.movies {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+
+    .item {
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 6px;
+            mix-blend-mode: multiply;
+        }
+    
+        .info {
+            font-size: .9rem;
+            color: var(--font-color-secondary);
+        }
+    
+        .text {
+            margin: 12px 0;
+        }
+    }
+}

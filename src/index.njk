@@ -1,0 +1,30 @@
+---
+layout: layouts/index.njk
+pagination:
+  data: collections.movies
+  size: 6
+  alias: movies
+  reverse: true
+---
+
+<div class="movies">
+  {% for movie in movies %}
+    <div class="item">
+      <a href="{{ movie.url }}">
+        {% image './src/assets/images/' + movie.data.cover, movie.data.title, 390 %}
+      </a>
+
+      <div class="info">
+        <span>{{ movie.date | formatDate('MM / dd / yyyy') }}</span>
+      </div>
+
+      <a href="{{ movie.url }}">
+        <h2 class="title">{{ movie.data.title }}</h2>
+      </a>
+      
+      <div class="text">
+        {{ movie.templateContent | striptags | truncate(100) | safe }}
+      </div>
+    </div>
+  {% endfor %}
+</div>

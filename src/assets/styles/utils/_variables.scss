@@ -1,0 +1,16 @@
+body {
+    --primary-color: #F04524;
+
+    --body-bg-color: #FAF4EC;
+
+    --font-color: #222222;
+    --font-color-secondary: #897E72;
+    --heading-color: var(--primary-color);
+    --link-color: var(--primary-color);
+}
+
+body[data-theme='dark'] {
+    --body-bg-color: #121212;
+
+    --font-color: #FFFFFF;
+}

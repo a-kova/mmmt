@@ -1,0 +1,5 @@
+{
+    "layout": "layouts/movie.njk",
+    "permalink": "{{ page.filePathStem }}.html",
+    "tags": "movies"
+}
