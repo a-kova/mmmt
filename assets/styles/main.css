@@ -1,0 +1,20 @@
+main {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 300px 1fr;
+  padding: 20vh 6rem 0 6rem;
+  box-sizing: border-box;
+}
+main .about {
+  position: fixed;
+  top: 20vh;
+  left: 2rem;
+  width: 300px;
+  color: var(--font-color-secondary);
+  font-size: 0.95rem;
+}
+main .content {
+  max-width: 800px;
+  padding-bottom: 2rem;
+  margin: 0 auto;
+}

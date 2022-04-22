@@ -1,0 +1,31 @@
+.movie img {
+  width: 100%;
+  height: auto;
+}
+.movie .title {
+  text-align: center;
+}
+.movie .quote {
+  text-align: right;
+  margin: 4rem 0;
+  font-size: 0.95rem;
+}
+.movie .navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 4rem 0;
+}
+.movie .navigation .item {
+  color: var(--font-color);
+}
+.movie .navigation .item .dir {
+  font-size: 0.9rem;
+  color: var(--link-color);
+}
+.movie .navigation .prev {
+  text-align: left;
+}
+.movie .navigation .next {
+  text-align: right;
+}
