@@ -2,6 +2,7 @@ const eleventySass = require("@grimlink/eleventy-plugin-sass");
 const sass = require("sass");
 const Image = require("@11ty/eleventy-img");
 const dateFormat = require('date-format');
+const fs = require('fs');
 
 const PATH_PREFIX = '/mmmt/';
 const AVG_WORDS_READ_PER_MINUTE = 250;
@@ -34,12 +35,13 @@ async function imageShortcode(src, alt, widths = [800, null], lazy = false) {
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/js");
   eleventyConfig.addPassthroughCopy("src/assets/images/logo.svg");
+  eleventyConfig.addPassthroughCopy("src/assets/favicon.ico");
 
   eleventyConfig.addPlugin(eleventySass, {
     sass,
     outputPath: "assets/styles",
     outputStyle:
-      process.env.ENVIRONMENT === "production" ? "compressed" : "expanded",
+      process.env.NODE_ENV === "productiona" ? "compressed" : "expanded",
   });
 
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);

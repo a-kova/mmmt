@@ -9,9 +9,10 @@
             {% block title %}Movie made me think{% endblock %}
         </title>
 
-        <link rel="stylesheet" href="{{ '/assets/styles/style.css' | url }}">
-        <script src="{{ '/assets/js/index.js' | url }}"></script>
+        <script src="{{ '/assets/js/index.js' | url }}" async></script>
 
+        <link rel="stylesheet" href="{{ '/assets/styles/style.css' | url }}">
+        <link rel="shortcut icon" href="{{ '/assets/favicon.png' | url }}" type="image/png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Baskerville:wght@400&display=swap" rel="stylesheet">

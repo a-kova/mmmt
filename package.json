@@ -1,21 +1,26 @@
 {
   "name": "mmmt",
   "version": "1.0.0",
-  "description": "",
+  "description": "Movie blog",
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "ENVIRONMENT=production npm run clean && npx @11ty/eleventy",
-    "start": "ENVIRONMENT=development npm run clean && npx @11ty/eleventy --watch --serve"
+    "build": "npm run clean && cross-env NODE_ENV=production npx @11ty/eleventy && npm run autoprefixer",
+    "start": "npm run clean && cross-env NODE_ENV=development npx @11ty/eleventy --watch --serve",
+    "autoprefixer": "npx postcss dist/assets/styles/style.css --use autoprefixer -r --no-map"
   },
   "keywords": [],
-  "author": "",
+  "author": "A. Kovalchuk",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
     "@11ty/eleventy-img": "^2.0.0",
     "@grimlink/eleventy-plugin-sass": "^1.0.2",
+    "autoprefixer": "^10.4.4",
+    "cross-env": "^7.0.3",
     "date-format": "^4.0.7",
+    "postcss": "^8.4.12",
+    "postcss-cli": "^9.1.0",
     "sass": "^1.50.1"
   }
 }
