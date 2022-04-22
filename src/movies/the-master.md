@@ -1,6 +1,6 @@
 ---
 title: The Master
-quote: |
+epigraph: |
     "If you figure a way to live without serving a master, any master, then let the rest of us know, will you?
     For you'd be the first person in the history of the world."
 cover: the-master-cover.jpg

@@ -1,6 +1,6 @@
 ---
 title: Groundhog Day
-quote: |
+epigraph: |
     – Do you know what today is?
     – No, what?
     – Today is tomorrow. It happened.

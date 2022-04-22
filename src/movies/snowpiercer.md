@@ -1,6 +1,6 @@
 ---
 title: Snowpiercer
-quote: |
+epigraph: |
     – Curtis, everyone has their preordained position, and everyone is in their place except you.
     – That's what people in the best place say to the people in the worst place.
 cover: snowpiercer-cover.jpg

@@ -10,6 +10,8 @@
             display: block;
             margin-bottom: 6px;
             mix-blend-mode: multiply;
+            aspect-ratio: 1 / 1.5;
+            object-fit: cover;
         }
     
         .info {

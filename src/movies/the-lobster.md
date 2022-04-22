@@ -1,6 +1,6 @@
 ---
 title: The Lobster
-quote: |
+epigraph: |
     – Have you thought of what animal you’d like to be if you end up alone?
     – Yes, a lobster.
     – A lobster is an excellent choice.
