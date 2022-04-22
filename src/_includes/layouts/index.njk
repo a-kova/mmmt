@@ -6,13 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="A small personal blog about movies that stay in your head much longer then you see them on screen.">
         <title>
-            {% block title %}
-                Movie made me think
-            {% endblock %}
+            {% block title %}Movie made me think{% endblock %}
         </title>
 
-        <link rel="stylesheet" href="/assets/styles/style.css">
-        <script src="/assets/js/index.js"></script>
+        <link rel="stylesheet" href="{{ '/assets/styles/style.css' | url }}">
+        <script src="{{ '/assets/js/index.js' | url }}"></script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +20,7 @@
         {# <button id="theme-switcher">Dark theme</button> #}
 
         <header>
-            <a class="title" href="/">Movie Made Me Think.</a>
+            <a class="title" href="{{ '/' | url }}">Movie Made Me Think.</a>
         </header>
 
         <main>

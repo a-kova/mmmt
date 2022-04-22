@@ -10,7 +10,7 @@ pagination:
 <div class="movies">
   {% for movie in movies %}
     <div class="item">
-      <a href="{{ movie.url }}">
+      <a href="{{ movie.url | url }}">
         {% image './src/assets/images/' + movie.data.cover, movie.data.title, 390 %}
       </a>
 
@@ -18,7 +18,7 @@ pagination:
         <span>{{ movie.date | formatDate('MM / dd / yyyy') }}</span>
       </div>
 
-      <a href="{{ movie.url }}">
+      <a href="{{ movie.url | url }}">
         <h2 class="title">{{ movie.data.title }}</h2>
       </a>
       

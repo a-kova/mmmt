@@ -3,12 +3,14 @@ const sass = require("sass");
 const Image = require("@11ty/eleventy-img");
 const dateFormat = require('date-format');
 
+const PATH_PREFIX = '/mmmt/';
+
 async function imageShortcode(src, alt, widths) {
   let metadata = await Image(src, {
     widths: Array.isArray(widths) ? widths : [widths],
     formats: ["webp"],
     outputDir: "dist/assets/images",
-    urlPath: "/assets/images/",
+    urlPath: PATH_PREFIX + "assets/images/",
   });
 
   let imageAttributes = {
@@ -45,6 +47,7 @@ module.exports = function (eleventyConfig) {
       input: "src",
       output: "dist",
     },
+    pathPrefix: PATH_PREFIX,
     templateFormats: ["html", "md", "njk"],
   };
 };
