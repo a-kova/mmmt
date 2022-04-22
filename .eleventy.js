@@ -35,7 +35,7 @@ async function imageShortcode(src, alt, widths = [800, null], lazy = false) {
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/js");
   eleventyConfig.addPassthroughCopy("src/assets/images/logo.svg");
-  eleventyConfig.addPassthroughCopy("src/assets/favicon.ico");
+  eleventyConfig.addPassthroughCopy("src/assets/favicon.png");
 
   eleventyConfig.addPlugin(eleventySass, {
     sass,
