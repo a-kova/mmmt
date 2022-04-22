@@ -28,7 +28,6 @@ async function imageShortcode(src, alt, widths = [800, null], lazy = false) {
     decoding: "async",
   };
 
-  // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
   return Image.generateHTML(metadata, imageAttributes);
 }
 
@@ -41,7 +40,7 @@ module.exports = function (eleventyConfig) {
     sass,
     outputPath: "assets/styles",
     outputStyle:
-      process.env.NODE_ENV === "productiona" ? "compressed" : "expanded",
+      process.env.NODE_ENV === "production" ? "compressed" : "expanded",
   });
 
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
