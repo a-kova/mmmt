@@ -1,15 +1,20 @@
 header {
   display: block;
-  border-bottom: 1px solid #ECECEC;
+  width: 100%;
   text-align: center;
 }
 header .title {
   position: fixed;
   top: 2rem;
   left: 2rem;
-  font-family: "Special Elite", cursive;
-  font-size: 22px;
-  text-transform: lowercase;
+  width: auto;
+}
+@media screen and (max-width: 768px) {
+  header .title {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
 }
 header .subtitle {
   font-size: 14px;
