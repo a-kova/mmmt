@@ -6,7 +6,7 @@ quote: |
 cover: snowpiercer-cover.jpg
 date: 2020-09-11
 ---
-{% image "./src/assets/images/snowpiercer.jpg", "Snowpiercer" %}
+{% image "./src/assets/images/snowpiercer.jpg", title %}
 
 I was really impressed by the acting game of the Joaquin Phoenix in the recently released Joker. I immediately wanted to see another film with him so my choice fell on The Master directed by Paul Thomas Anderson. And the film hasn't disappointed me. In addition to the expectedly brilliant acting, there is also an unusual plot, camera work with stunning angles and bewitching music from a member of the Radiohead band.
 

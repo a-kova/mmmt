@@ -6,8 +6,12 @@
 {% block title %}{{ title }} | {{ super() }}{% endblock %}
 
 {% block content %}
-    <div class="movie">
+    <article class="movie">
         <h1 class="title">{{ title }}</h1>
+
+        <div class="info">
+            {{ date | formatdate('MM/dd/yyyy') }} &middot; {{ content | striptags | wordcount | readtime }} min read
+        </div>
 
         <div class="quote">
             {{ quote | nl2br | safe }}
@@ -36,5 +40,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </article>
 {% endblock %}

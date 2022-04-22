@@ -1,12 +1,12 @@
 ---
 title: The Master
 quote: |
-    test
-    test
+    "If you figure a way to live without serving a master, any master, then let the rest of us know, will you?
+    For you'd be the first person in the history of the world."
 cover: the-master-cover.jpg
 date: 2021-02-12
 ---
-{% image "./src/assets/images/the-master.jpg", "The Master" %}
+{% image "./src/assets/images/the-master.jpg", title %}
 
 I was really impressed by the acting game of the Joaquin Phoenix in the recently released Joker. I immediately wanted to see another film with him so my choice fell on The Master directed by Paul Thomas Anderson. And the film hasn't disappointed me. In addition to the expectedly brilliant acting, there is also an unusual plot, camera work with stunning angles and bewitching music from a member of the Radiohead band.
 

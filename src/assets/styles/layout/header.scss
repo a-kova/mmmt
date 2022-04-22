@@ -1,15 +1,21 @@
+@import "../utils/_mixins";
+
 header {
     display: block;
-    border-bottom: 1px solid #ECECEC;
+    width: 100%;
     text-align: center;
 
     .title {
         position: fixed;
         top: 2rem;
         left: 2rem;
-        font-family: 'Special Elite', cursive;
-        font-size: 22px;
-        text-transform: lowercase;
+        width: auto;
+
+        @include for-mobile {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
     }
 
     .subtitle {

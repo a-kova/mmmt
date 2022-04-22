@@ -1,6 +1,5 @@
 @import "utils/_variables";
 
-@import "layout/container";
 @import "layout/footer";
 @import "layout/header";
 @import "layout/main";
@@ -10,6 +9,7 @@
 
 body {
     background-color: var(--body-bg-color);
+    min-height: 100vh;
     margin: 0;
     color: var(--font-color);
     letter-spacing: .2pt;
@@ -17,6 +17,7 @@ body {
     font-size: 18px;
     line-height: 2;
     transition: background-color .2s linear;
+    padding: 2rem;
 }
 
 a {

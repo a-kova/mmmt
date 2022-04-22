@@ -4,19 +4,26 @@ const Image = require("@11ty/eleventy-img");
 const dateFormat = require('date-format');
 
 const PATH_PREFIX = '/mmmt/';
+const AVG_WORDS_READ_PER_MINUTE = 250;
 
-async function imageShortcode(src, alt, widths) {
+async function imageShortcode(src, alt, widths = [800, null], lazy = false) {
   let metadata = await Image(src, {
-    widths: Array.isArray(widths) ? widths : [widths],
+    widths,
     formats: ["webp"],
     outputDir: "dist/assets/images",
     urlPath: PATH_PREFIX + "assets/images/",
   });
 
+  const srcset = [`${metadata.webp[0].url} 1x`];
+  if (metadata.webp[1]) {
+    srcset.push(`${metadata.webp[1].url} 2x`);
+  }
+
   let imageAttributes = {
     alt,
-    //srcset: 'test',
-    loading: "lazy",
+    srcset: srcset.join(', '),
+    sizes: '100vw',
+    loading: lazy ? "lazy" : "eager",
     decoding: "async",
   };
 
@@ -26,6 +33,7 @@ async function imageShortcode(src, alt, widths) {
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/js");
+  eleventyConfig.addPassthroughCopy("src/assets/images/logo.svg");
 
   eleventyConfig.addPlugin(eleventySass, {
     sass,
@@ -38,7 +46,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);
 
-  eleventyConfig.addFilter("formatDate", (date, format = 'Y/m/d') => dateFormat(format, date));
+  eleventyConfig.addFilter("formatdate", (date, format = 'Y/m/d') => dateFormat(format, date));
+  eleventyConfig.addFilter("readtime", (wordsCount) => Math.ceil(wordsCount / AVG_WORDS_READ_PER_MINUTE));
   
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 

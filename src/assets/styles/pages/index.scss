@@ -1,6 +1,6 @@
 .movies {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 4rem;
 
     .item {
@@ -13,6 +13,9 @@
         }
     
         .info {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
             font-size: .9rem;
             color: var(--font-color-secondary);
         }

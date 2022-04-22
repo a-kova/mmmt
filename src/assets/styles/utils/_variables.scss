@@ -4,9 +4,11 @@ body {
     --body-bg-color: #FAF4EC;
 
     --font-color: #222222;
-    --font-color-secondary: #897E72;
+    --font-color-secondary: #756c61;
     --heading-color: var(--primary-color);
     --link-color: var(--primary-color);
+    
+    --divider-color: #e5ded6;
 }
 
 body[data-theme='dark'] {

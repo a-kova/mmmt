@@ -14,13 +14,15 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Baskerville:wght@400&family=Special+Elite&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Baskerville:wght@400&display=swap" rel="stylesheet">
     </head>
     <body data-theme="light">
         {# <button id="theme-switcher">Dark theme</button> #}
 
         <header>
-            <a class="title" href="{{ '/' | url }}">Movie Made Me Think.</a>
+            <a href="{{ '/' | url }}">
+                <img class="title" src="{{ '/assets/images/logo.svg' | url }}" alt="Logo" width="330" height="18">
+            </a>
         </header>
 
         <main>

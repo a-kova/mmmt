@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "ENVIRONMENT=production rm -rf dist && npx @11ty/eleventy",
-    "start": "ENVIRONMENT=development rm -rf dist && npx @11ty/eleventy --watch --serve"
+    "clean": "rm -rf dist",
+    "build": "ENVIRONMENT=production npm run clean && npx @11ty/eleventy",
+    "start": "ENVIRONMENT=development npm run clean && npx @11ty/eleventy --watch --serve"
   },
   "keywords": [],
   "author": "",
