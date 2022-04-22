@@ -107,6 +107,9 @@ main .content {
   display: block;
   margin-bottom: 6px;
   mix-blend-mode: multiply;
+  aspect-ratio: 1/1.5;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .movies .item .info {
   display: flex;
@@ -132,7 +135,7 @@ main .content {
   color: var(--font-color-secondary);
   font-size: 0.9rem;
 }
-.movie .quote {
+.movie .epigraph {
   text-align: right;
   margin: 4rem 0;
   font-size: 0.95rem;
