@@ -6,7 +6,7 @@ eleventyExcludeFromCollections: true
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     {% for movie in collections.movies %}
         <url>
-            <loc>{{ site.url }}{{ movie.url | url }}</loc>
+            <loc>{{ site.url }}{{ movie.url }}</loc>
             <lastmod>{{ movie.date.toISOString() }}</lastmod>
         </url>
     {% endfor %}

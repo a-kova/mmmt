@@ -10,7 +10,7 @@ pagination:
 <div class="movies">
   {% for movie in movies %}
     <div class="item">
-      <a href="{{ movie.url | url }}">
+      <a href="{{ site.url }}{{ movie.url }}">
         {% image movie.data.cover, movie.data.title, [450, 800], loop.index > 3 %}
       </a>
 
@@ -19,7 +19,7 @@ pagination:
         <span>{{ movie.templateContent | striptags | wordcount | readtime }} min read</span>
       </div>
 
-      <a href="{{ movie.url | url }}">
+      <a href="{{ site.url }}{{ movie.url }}">
         <h2 class="title">{{ movie.data.title }}</h2>
       </a>
       

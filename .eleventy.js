@@ -2,6 +2,7 @@ const eleventySass = require("@grimlink/eleventy-plugin-sass");
 const sass = require("sass");
 const Image = require("@11ty/eleventy-img");
 const dateFormat = require('date-format');
+const site = require('./src/_data/site');
 
 const AVG_WORDS_READ_PER_MINUTE = 250;
 
@@ -12,7 +13,14 @@ async function imageShortcode(filename, alt, widths = [800, null], lazy = false)
     widths,
     formats: ["webp"],
     outputDir: "dist/assets/images",
-    urlPath: "assets/images/",
+    urlPath: "/assets/images/",
+  });
+
+  metadata.webp = metadata.webp.map((img) => {
+    img.url = site.url + img.url;
+    img.srcset = site.url + img.srcset;
+
+    return img;
   });
 
   const srcset = [`${metadata.webp[0].url} 1x`];
