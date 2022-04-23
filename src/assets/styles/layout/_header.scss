@@ -2,8 +2,9 @@
 
 header {
     display: block;
+    position: relative;
     width: 100%;
-    text-align: center;
+    text-align: left;
 
     .title {
         position: fixed;
@@ -20,8 +21,13 @@ header {
 
     .switcher {
         display: block;
-        position: fixed;
-        top: 2rem;
-        right: 2rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        @include for-mobile {
+            top: 5px;
+            right: -5px;
+        }
     }
 }

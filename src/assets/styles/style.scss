@@ -16,7 +16,7 @@ body {
     color: var(--font-color);
     letter-spacing: .2pt;
     font-family: 'Baskerville', serif;
-    font-size: 18px;
+    font-size: 19px;
     line-height: 2;
     padding: 2rem;
 
@@ -34,4 +34,12 @@ h1, h2 {
     line-height: 1;
     font-family: 'Bebas Neue', cursive;
     color: var(--heading-color);
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.9rem;
 }
