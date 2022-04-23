@@ -27,6 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 0);
 
   themeSwitcher && themeSwitcher.addEventListener("click", () => {
-      body.dataset.theme == "dark" ? switchToLight(body) : switchToDark(body);
+      body.dataset.theme === "dark" ? switchToLight(body) : switchToDark(body);
     });
 });
