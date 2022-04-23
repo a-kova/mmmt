@@ -7,7 +7,7 @@ epigraph: |
 cover: groundhog-day-cover.jpg
 date: 2021-01-15
 ---
-{% image "./src/assets/images/groundhog-day.jpg", title %}
+{% image "groundhog-day.jpg", title %}
 
 This is most likely not the movie review you expect to see in 2020. However, I still think it is relevant and I will definitely put it in my top and this is why.
 

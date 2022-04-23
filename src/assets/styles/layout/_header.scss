@@ -18,8 +18,10 @@ header {
         }
     }
 
-    .subtitle {
-        font-size: 14px;
-        color: var(--font-color-secondary);
+    .switcher {
+        display: block;
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
     }
 }

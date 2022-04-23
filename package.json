@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "npm run clean && cross-env NODE_ENV=production npx @11ty/eleventy && npm run autoprefixer",
-    "start": "npm run clean && cross-env NODE_ENV=development npx @11ty/eleventy --watch --serve",
+    "build": "npm run clean && cross-env ELEVENTY_ENV=production npx @11ty/eleventy && npm run autoprefixer",
+    "start": "npm run clean && cross-env ELEVENTY_ENV=development npx @11ty/eleventy --watch --serve",
     "autoprefixer": "npx postcss dist/assets/styles/style.css --use autoprefixer -r --no-map"
   },
   "keywords": [],

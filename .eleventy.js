@@ -7,7 +7,9 @@ const fs = require('fs');
 const PATH_PREFIX = '/mmmt/';
 const AVG_WORDS_READ_PER_MINUTE = 250;
 
-async function imageShortcode(src, alt, widths = [800, null], lazy = false) {
+async function imageShortcode(filename, alt, widths = [800, null], lazy = false) {
+  const src = `./src/assets/images/${filename}`;
+  
   let metadata = await Image(src, {
     widths,
     formats: ["webp"],
@@ -33,14 +35,14 @@ async function imageShortcode(src, alt, widths = [800, null], lazy = false) {
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/js");
-  eleventyConfig.addPassthroughCopy("src/assets/images/logo.svg");
+  eleventyConfig.addPassthroughCopy("src/assets/icons");
+  eleventyConfig.addPassthroughCopy("src/assets/logo.svg");
   eleventyConfig.addPassthroughCopy("src/assets/favicon.png");
 
   eleventyConfig.addPlugin(eleventySass, {
     sass,
     outputPath: "assets/styles",
-    outputStyle:
-      process.env.NODE_ENV === "production" ? "compressed" : "expanded",
+    outputStyle: process.env.ELEVENTY_ENV === "production" ? "compressed" : "expanded",
   });
 
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);

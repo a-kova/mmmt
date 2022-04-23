@@ -1,8 +1,10 @@
-@import "utils/_variables";
+@import "utils/variables";
 
 @import "layout/footer";
 @import "layout/header";
 @import "layout/main";
+
+@import "components/theme-switcher";
 
 @import "pages/index";
 @import "pages/movie";
@@ -16,8 +18,11 @@ body {
     font-family: 'Baskerville', serif;
     font-size: 18px;
     line-height: 2;
-    transition: background-color .2s linear;
     padding: 2rem;
+
+    &.loaded {
+        transition: background-color .2s linear;
+    }
 }
 
 a {

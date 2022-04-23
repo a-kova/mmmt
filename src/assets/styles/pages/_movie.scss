@@ -4,6 +4,7 @@
     img {
         width: 100%;
         height: auto;
+        mix-blend-mode: var(--image-blend-mode);
     }
 
     .title {

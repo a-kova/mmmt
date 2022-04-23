@@ -11,7 +11,7 @@ pagination:
   {% for movie in movies %}
     <div class="item">
       <a href="{{ movie.url | url }}">
-        {% image './src/assets/images/' + movie.data.cover, movie.data.title, [450, 800], loop.index > 3 %}
+        {% image movie.data.cover, movie.data.title, [450, 800], loop.index > 3 %}
       </a>
 
       <div class="info">

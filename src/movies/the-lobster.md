@@ -7,7 +7,7 @@ epigraph: |
 cover: the-lobster-cover.jpg
 date: 2020-11-20
 ---
-{% image "./src/assets/images/the-lobster.jpg", title %}
+{% image "the-lobster.jpg", title %}
 
 As soon as I have come up with an idea to start this blog, I knew that "The Lobster" directed by Lanthimos Yorgos would be the first film I would review. It was probably the first arthouse film that did not leave me wondering "What was that?", but made me think of society problems raised in the movie.
 
