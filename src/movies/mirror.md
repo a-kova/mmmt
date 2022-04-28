@@ -8,7 +8,7 @@ cover: mirror-cover.jpg
 ---
 {% image 'mirror.jpg', title %}
 
-This film is a confession
+This film is a confession.
 This film is a reflection.
 
 This picture definitely cannot be attributed to traditional cinema. Inspired by the film **"8½"** by Frederico Fellini,
@@ -37,7 +37,7 @@ If you have ever been nostalgic for your childhood, replayed events in your head
 
 After the premiere, director of Goskino Filipp Yermash said the famous phrase: *"Of course, we have a freedom of creativity, but that's too much."* Can you imagine a more flattering compliment?
 
-And to end with, allow me to quote Tarkovskiy about the idea of the movie. This is that typical case when no one can say better then authoer himself:
+And to end with, allow me to quote Tarkovskiy about the idea of the movie. This is that typical case when no one can say better then author himself:
 
 <blockquote>Our film is a process. It once occurred to a man that he was old, that it was time to think about the soul. He would be glad to believe in God, but he cannot.
 And now he understands, realizes that everything was important in childhood, and everything that happened to him later was vanity. I want to make a picture of how a person, once waking up and looking at himself in the mirror, suddenly got scared - he suddenly realized that his life has been lived, that nothing has been done, and if earlier there was eternity before him, now everything is behind him.
