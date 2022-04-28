@@ -3,7 +3,7 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 4rem;
 
-    .item {
+    &-item {
         img {
             width: 100%;
             height: auto;
@@ -14,7 +14,7 @@
             mix-blend-mode: var(--image-blend-mode);
         }
     
-        .info {
+        &-info {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -22,8 +22,9 @@
             color: var(--font-color-secondary);
         }
     
-        .text {
+        &-text {
             margin: 12px 0;
+            font-size: var(--font-size-small);
         }
     }
 }

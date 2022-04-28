@@ -3,3 +3,8 @@
     @content;
   }
 }
+
+@mixin slow-appear {
+  opacity: 0;
+  transform: translateY(50%);
+}

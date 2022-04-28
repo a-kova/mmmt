@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     themeSwitcher.classList.add("loaded");
   }, 0);
 
-  themeSwitcher && themeSwitcher.addEventListener("click", () => {
+  themeSwitcher.addEventListener("click", () => {
       body.dataset.theme === "dark" ? switchToLight(body) : switchToDark(body);
     });
 });

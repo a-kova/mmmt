@@ -21,6 +21,7 @@
     "date-format": "^4.0.7",
     "postcss": "^8.4.12",
     "postcss-cli": "^9.1.0",
-    "sass": "^1.50.1"
+    "sass": "^1.50.1",
+    "uniqid": "^5.4.0"
   }
 }

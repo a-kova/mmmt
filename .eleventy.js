@@ -3,8 +3,10 @@ const sass = require("sass");
 const Image = require("@11ty/eleventy-img");
 const dateFormat = require('date-format');
 const site = require('./src/_data/site');
+const uniqid = require('uniqid'); 
 
 const AVG_WORDS_READ_PER_MINUTE = 250;
+const IS_PRODUCTION = process.env.ELEVENTY_ENV === "production";
 
 async function imageShortcode(filename, alt, widths = [800, null], lazy = false) {
   const src = `./src/assets/images/${filename}`;
@@ -17,8 +19,14 @@ async function imageShortcode(filename, alt, widths = [800, null], lazy = false)
   });
 
   metadata.webp = metadata.webp.map((img) => {
-    img.url = site.url + img.url;
-    img.srcset = site.url + img.srcset;
+    if (!img.url.includes(site.url)) {
+      img.url = site.url + img.url;
+    }
+    
+    
+    if (!img.srcset.includes(site.url)) {
+      img.srcset = site.url + img.srcset;
+    }
 
     return img;
   });
@@ -40,7 +48,7 @@ async function imageShortcode(filename, alt, widths = [800, null], lazy = false)
 }
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("src/assets/js");
+  eleventyConfig.addPassthroughCopy('src/assets/js');
   eleventyConfig.addPassthroughCopy("src/assets/icons");
   eleventyConfig.addPassthroughCopy("src/assets/logo.svg");
   eleventyConfig.addPassthroughCopy("src/assets/favicon.png");
@@ -48,7 +56,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventySass, {
     sass,
     outputPath: "assets/styles",
-    outputStyle: process.env.ELEVENTY_ENV === "production" ? "compressed" : "expanded",
+    outputStyle: IS_PRODUCTION ? "compressed" : "expanded",
   });
 
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
@@ -57,6 +65,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("formatdate", (date, format = 'Y/m/d') => dateFormat(format, date));
   eleventyConfig.addFilter("readtime", (wordsCount) => Math.ceil(wordsCount / AVG_WORDS_READ_PER_MINUTE));
+  eleventyConfig.addFilter("hash", (filePath) => IS_PRODUCTION ? `${filePath}?v=${uniqid.time()}` : filePath);
   
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 

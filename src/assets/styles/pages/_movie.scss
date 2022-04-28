@@ -1,30 +1,24 @@
 @import "../utils/_mixins";
 
 .movie {
-    img {
-        width: 100%;
-        height: auto;
-        mix-blend-mode: var(--image-blend-mode);
-    }
-
-    .title {
+    &-title {
         text-align: center;
         margin: 0;
     }
 
-    .info {
+    &-info {
         text-align: center;
         color: var(--font-color-secondary);
-        font-size: 0.95rem;
+        font-size: var(--font-size-small);
     }
 
-    .epigraph {
+    &-epigraph {
         text-align: right;
         margin: 4rem 0;
-        font-size: 0.95rem;
+        font-size: var(--font-size-small);
     }
 
-    .navigation {
+    &-navigation {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -34,21 +28,36 @@
             margin-top: 2rem;
         }
 
-        .item {
+        &-item {
             color: var(--font-color);
 
-            .dir {
-                font-size: 0.9rem;
+            &-dir {
+                font-size: var(--font-size-small);
                 color: var(--link-color);
             }
         }
 
-        .prev {
+        &-prev {
             text-align: left;
         }
 
-        .next {
+        &-next {
             text-align: right;
         }
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        mix-blend-mode: var(--image-blend-mode);
+    }
+
+    blockquote {
+        font-style: italic;
+        font-size: var(--font-size-small);
+        margin: 0;
+        padding: 0 0 0 2rem;
+        border-left: 5px solid var(--divider-color);
+        white-space: break-spaces;
     }
 }

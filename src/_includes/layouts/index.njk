@@ -7,7 +7,7 @@
         <meta name="description" content="A small personal blog about movies that stay in your head much longer then you see them on screen.">
         <title>{% block title %}Movie made me think{% endblock %}</title>
 
-        <script src="{{ site.url }}{{ '/assets/js/index.js' }}"></script>
+        <script src="{{ site.url }}{{ '/assets/js/index.js' | hash }}"></script>
         
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-G4XFGMHH3W"></script>
@@ -21,11 +21,11 @@
             gtag('config', 'G-G4XFGMHH3W');
         </script>
 
-        <link rel="stylesheet" href="{{ site.url }}{{ '/assets/styles/style.css' }}">
+        <link rel="stylesheet" href="{{ site.url }}{{ '/assets/styles/style.css' | hash }}">
         <link rel="shortcut icon" href="{{ site.url }}{{ '/assets/favicon.png' }}" type="image/png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Baskerville:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Baskervville:ital@0;1&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -57,7 +57,8 @@
         </main>
 
         <footer>
-            &copy; {% year %} Andrew K.
+            &copy; {% year %}
+            {# <br><a href="/">About</a> #}
         </footer>
     </body>
 </html>

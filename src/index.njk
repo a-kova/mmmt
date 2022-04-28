@@ -9,22 +9,22 @@ pagination:
 
 <div class="movies">
   {% for movie in movies %}
-    <div class="item">
+    <div class="movies-item">
       <a href="{{ site.url }}{{ movie.url }}">
         {% image movie.data.cover, movie.data.title, [450, 800], loop.index > 3 %}
       </a>
 
-      <div class="info">
+      <div class="movies-item-info">
         <span>{{ movie.date | formatdate('MM/dd/yyyy') }}</span>
         <span>{{ movie.templateContent | striptags | wordcount | readtime }} min read</span>
       </div>
 
       <a href="{{ site.url }}{{ movie.url }}">
-        <h2 class="title">{{ movie.data.title }}</h2>
+        <h2 class="movies-item-title">{{ movie.data.title }}</h2>
       </a>
       
-      <div class="text">
-        {{ movie.templateContent | striptags | truncate(100) | safe }}
+      <div class="movies-item-text">
+        {{ movie.templateContent | striptags | truncate(115) | safe }}
       </div>
     </div>
   {% endfor %}

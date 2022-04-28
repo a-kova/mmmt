@@ -19,7 +19,7 @@ main {
         width: 300px;
         max-width: 100%;
         color: var(--font-color-secondary);
-        font-size: 0.95rem;
+        font-size: var(--font-size-small);
         text-align: left;
 
         @include for-mobile {
