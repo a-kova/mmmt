@@ -3,6 +3,13 @@
 {% set previousPost = collections.movies | getPreviousCollectionItem(page) %}
 {% set nextPost = collections.movies | getNextCollectionItem(page) %}
 
+{% block meta %}
+    <meta property="og:title" content='"{{ title }}" movie review'>
+    <meta property="og:description" content="{{ content | striptags | truncate(115) | safe }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    {% metaImage cover %}
+{% endblock %}
+
 {% block title %}{{ title }} | {{ super() }}{% endblock %}
 
 {% block content %}

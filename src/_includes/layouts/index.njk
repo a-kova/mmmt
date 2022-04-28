@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <title>{% block title %}Movie made me think{% endblock %}</title>
+        
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="A small personal blog about movies that stay in your head much longer then you see them on screen.">
-        <title>{% block title %}Movie made me think{% endblock %}</title>
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Moviemademethink.com">
+        <meta property="og:locale" content="en_US">
+        {% block meta %}{% endblock %}
 
         <script src="{{ site.url }}{{ '/assets/js/index.js' | hash }}"></script>
         

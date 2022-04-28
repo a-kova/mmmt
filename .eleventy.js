@@ -47,6 +47,19 @@ async function imageShortcode(filename, alt, widths = [800, null], lazy = false)
   return Image.generateHTML(metadata, imageAttributes);
 }
 
+async function metaImageShortcode(filename) {
+  const src = `./src/assets/images/${filename}`;
+  
+  let metadata = await Image(src, {
+    widths: [null],
+    formats: ["webp"],
+    outputDir: "dist/assets/images",
+    urlPath: "/assets/images/",
+  });
+
+  return `<meta property="og:image" content="${site.url}/${metadata.webp[0].url}">`;
+}
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/assets/js');
   eleventyConfig.addPassthroughCopy("src/assets/icons");
@@ -62,10 +75,14 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);
+  eleventyConfig.addNunjucksAsyncShortcode("metaImage", metaImageShortcode);
+  eleventyConfig.addLiquidShortcode("metaImage", metaImageShortcode);
+  eleventyConfig.addJavaScriptFunction("metaImage", metaImageShortcode);
 
   eleventyConfig.addFilter("formatdate", (date, format = 'Y/m/d') => dateFormat(format, date));
   eleventyConfig.addFilter("readtime", (wordsCount) => Math.ceil(wordsCount / AVG_WORDS_READ_PER_MINUTE));
   eleventyConfig.addFilter("hash", (filePath) => IS_PRODUCTION ? `${filePath}?v=${uniqid.time()}` : filePath);
+  eleventyConfig.addFilter("attrvalue", (string, attr) => new RegExp(`(${attr}=")([^"]*)(")`).exec(string)?.[2]);
   
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
