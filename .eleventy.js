@@ -52,12 +52,12 @@ async function metaImageShortcode(filename) {
   
   let metadata = await Image(src, {
     widths: [null],
-    formats: ["webp"],
+    formats: ["png"],
     outputDir: "dist/assets/images",
     urlPath: "/assets/images/",
   });
 
-  return `<meta property="og:image" content="${site.url}/${metadata.webp[0].url}">`;
+  return `<meta property="og:image" content="${site.url}/${metadata.png[0].url}">`;
 }
 
 module.exports = function (eleventyConfig) {
