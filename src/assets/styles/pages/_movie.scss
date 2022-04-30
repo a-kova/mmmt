@@ -3,7 +3,7 @@
 .movie {
     &-title {
         text-align: center;
-        margin: 0;
+        margin: 0 0 0.5rem 0;
     }
 
     &-info {
@@ -52,9 +52,13 @@
         mix-blend-mode: var(--image-blend-mode);
     }
 
+    p {
+        margin: 1.8rem 0;
+    }
+
     blockquote {
         font-style: italic;
-        font-size: var(--font-size-small);
+        //font-size: var(--font-size-small);
         margin: 0;
         padding: 0 0 0 2rem;
         border-left: 5px solid var(--divider-color);
