@@ -57,6 +57,17 @@ const observer = new IntersectionObserver(
 
 document.addEventListener("DOMContentLoaded", () => {
   const elements = [...document.getElementsByClassName("fade-in")];
+  const images = [...document.querySelectorAll(".fade-in img")];
 
-  elements.forEach((element) => observer.observe(element));
+  // Wait for all images to be downloaded from elements
+  Promise.all(
+    images.map(
+      (image) =>
+        new Promise((resolve) => {
+          image.onload = image.onerror = resolve;
+        })
+    )
+  ).then(() => {
+    elements.forEach((element) => observer.observe(element));
+  });
 });
