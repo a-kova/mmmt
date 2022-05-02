@@ -8,7 +8,7 @@ const uniqid = require('uniqid');
 const AVG_WORDS_READ_PER_MINUTE = 250;
 const IS_PRODUCTION = process.env.ELEVENTY_ENV === "production";
 
-async function imageShortcode(filename, alt, widths = [800, null], lazy = false) {
+async function imageShortcode(filename, alt, widths = [800, null]) {
   const src = `./src/assets/images/${filename}`;
   
   let metadata = await Image(src, {
@@ -40,7 +40,7 @@ async function imageShortcode(filename, alt, widths = [800, null], lazy = false)
     alt,
     srcset: srcset.join(', '),
     sizes: '100vw',
-    loading: lazy ? "lazy" : "eager",
+    loading: "eager",
     decoding: "async",
   };
 
