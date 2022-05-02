@@ -1,3 +1,5 @@
+/** Dark mode switcher */
+
 const switchToLight = (body) => {
   body.dataset.theme = "light";
   localStorage.setItem("theme", "light");
@@ -8,7 +10,9 @@ const switchToDark = (body) => {
   localStorage.setItem("theme", "dark");
 };
 
-let prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+let prefersDark =
+  window.matchMedia &&
+  window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 let initialTheme = localStorage.getItem("theme");
 if (!initialTheme) {
@@ -27,6 +31,32 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 0);
 
   themeSwitcher.addEventListener("click", () => {
-      body.dataset.theme === "dark" ? switchToLight(body) : switchToDark(body);
+    body.dataset.theme === "dark" ? switchToLight(body) : switchToDark(body);
+  });
+});
+
+/** Fade in */
+
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    let appearingElementCounter = 0;
+
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.setAttribute("data-appeared", "true");
+        }, appearingElementCounter * 200);
+
+        observer.unobserve(entry.target);
+        appearingElementCounter++;
+      }
     });
+  },
+  { threshold: 0.1 }
+);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = [...document.getElementsByClassName("fade-in")];
+
+  elements.forEach((element) => observer.observe(element));
 });

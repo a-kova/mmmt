@@ -9,7 +9,7 @@ pagination:
 
 <div class="movies">
   {% for movie in movies %}
-    <div class="movies-item">
+    <div class="movies-item fade-in">
       <a href="{{ site.url }}{{ movie.url }}">
         {% image movie.data.cover, movie.data.title, [450, 800], loop.index > 3 %}
       </a>
