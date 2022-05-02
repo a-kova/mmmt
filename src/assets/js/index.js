@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     images.map(
       (image) =>
         new Promise((resolve) => {
-          if (image.completed) {
+          if (image.complete) {
             resolve();
           } else {
             image.onload = image.onerror = resolve;
