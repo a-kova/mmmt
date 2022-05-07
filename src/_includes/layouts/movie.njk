@@ -10,7 +10,8 @@
     {% metaImage cover %}
 {% endblock %}
 
-{% block title %}{{ title }} | {{ super() }}{% endblock %}
+{% block title %}{{ title }} | {{ super() }}
+{% endblock %}
 
 {% block content %}
     <article class="movie">
@@ -31,7 +32,9 @@
                 <div>
                     {% if previousPost %}
                         <a href="{{ previousPost.url }}" class="movie-navigation-prev movie-navigation-item">
-                            <div class="movie-navigation-item-dir">&larr; Prev</div>
+                            <div class="movie-navigation-item-dir">
+                                <span class="movie-navigation-prev-arrow">&larr;</span> Prev
+                            </div>
                             {{ previousPost.data.title }}
                         </a>
                     {% endif %}
@@ -40,7 +43,9 @@
                 <div>
                     {% if nextPost %}
                         <a href="{{ nextPost.url }}" class="movie-navigation-next movie-navigation-item">
-                            <div class="movie-navigation-item-dir">Next &rarr;</div>
+                            <div class="movie-navigation-item-dir">
+                                Next <span class="movie-navigation-next-arrow">&rarr;</span>
+                                </div>
                             {{ nextPost.data.title }}
                         </a>
                     {% endif %}

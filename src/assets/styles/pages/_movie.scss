@@ -1,66 +1,82 @@
 @import "../utils/_mixins";
 
 .movie {
-    &-title {
-        text-align: center;
-        margin: 0 0 0.5rem 0;
+  &-title {
+    text-align: center;
+    margin: 0 0 0.5rem 0;
+  }
+
+  &-info {
+    text-align: center;
+    color: var(--font-color-secondary);
+    font-size: var(--font-size-small);
+  }
+
+  &-epigraph {
+    text-align: right;
+    margin: 4rem 0;
+    font-size: var(--font-size-small);
+  }
+
+  &-navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 6rem;
+
+    @include for-mobile {
+      margin-top: 2rem;
     }
 
-    &-info {
-        text-align: center;
-        color: var(--font-color-secondary);
+    &-item {
+      display: block;
+      color: var(--font-color);
+
+      &-dir {
         font-size: var(--font-size-small);
+        color: var(--link-color);
+      }
     }
 
-    &-epigraph {
-        text-align: right;
-        margin: 4rem 0;
-        font-size: var(--font-size-small);
-    }
-
-    &-navigation {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-top: 4rem;
-
-        @include for-mobile {
-            margin-top: 2rem;
-        }
-
-        &-item {
-            color: var(--font-color);
-
-            &-dir {
-                font-size: var(--font-size-small);
-                color: var(--link-color);
-            }
-        }
-
-        &-prev {
-            text-align: left;
-        }
-
-        &-next {
-            text-align: right;
+    &-prev, &-next {
+        &-arrow {
+            display: inline-block;
+            transition: transform .15s linear;
         }
     }
 
-    img {
-        width: 100%;
-        height: auto;
-        mix-blend-mode: var(--image-blend-mode);
+    &-prev {
+      text-align: left;
+
+      &:hover &-arrow {
+        transform: translateX(-4px);
+      }
     }
 
-    p {
-        margin: 1.8rem 0;
-    }
+    &-next {
+      text-align: right;
 
-    blockquote {
-        font-size: var(--font-size-small);
-        margin: 0;
-        padding: 0 0 0 2rem;
-        border-left: 5px solid var(--divider-color);
-        white-space: break-spaces;
+      &:hover &-arrow {
+        transform: translateX(4px);
+      }
     }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    mix-blend-mode: var(--image-blend-mode);
+  }
+
+  p {
+    margin: 1.8rem 0;
+  }
+
+  blockquote {
+    font-size: var(--font-size-small);
+    margin: 0;
+    padding: 0 0 0 2rem;
+    border-left: 5px solid var(--divider-color);
+    white-space: break-spaces;
+  }
 }
