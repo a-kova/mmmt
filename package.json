@@ -14,14 +14,14 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
-    "@11ty/eleventy-img": "^2.0.0",
-    "@grimlink/eleventy-plugin-sass": "^1.0.2",
-    "autoprefixer": "^10.4.4",
+    "@11ty/eleventy-img": "^2.0.1",
+    "@grimlink/eleventy-plugin-sass": "^1.0.3",
+    "autoprefixer": "^10.4.7",
     "cross-env": "^7.0.3",
-    "date-format": "^4.0.7",
-    "postcss": "^8.4.12",
+    "date-format": "^4.0.11",
+    "postcss": "^8.4.14",
     "postcss-cli": "^9.1.0",
-    "sass": "^1.50.1",
+    "sass": "^1.52.3",
     "uniqid": "^5.4.0"
   }
 }
