@@ -1,33 +1,33 @@
-@import "../utils/_mixins";
+@import "../utils/mixins";
 
 header {
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: left;
+
+  .title {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    width: auto;
+
+    @include for-mobile {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .switcher {
     display: block;
-    position: relative;
-    width: 100%;
-    text-align: left;
+    position: absolute;
+    top: 0;
+    right: 0;
 
-    .title {
-        position: fixed;
-        top: 2rem;
-        left: 2rem;
-        width: auto;
-
-        @include for-mobile {
-            position: relative;
-            top: 0;
-            left: 0;
-        }
+    @include for-mobile {
+      top: 5px;
+      right: -5px;
     }
-
-    .switcher {
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-
-        @include for-mobile {
-            top: 5px;
-            right: -5px;
-        }
-    }
+  }
 }

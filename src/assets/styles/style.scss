@@ -1,46 +1,44 @@
 @import "utils/variables";
-
 @import "layout/footer";
 @import "layout/header";
 @import "layout/main";
-
 @import "components/fade-in";
 @import "components/theme-switcher";
-
 @import "pages/index";
 @import "pages/movie";
 
 body {
-    background-color: var(--body-bg-color);
-    min-height: 100vh;
-    margin: 0;
-    color: var(--font-color);
-    letter-spacing: .2pt;
-    font-family: 'Libre Baskerville', serif;
-    font-size: 16px;
-    line-height: 2;
-    padding: 2rem;
+  background-color: var(--body-bg-color);
+  min-height: 100vh;
+  margin: 0;
+  color: var(--font-color);
+  letter-spacing: 0.2pt;
+  font-family: "Libre Baskerville", serif;
+  font-size: 16px;
+  line-height: 2;
+  padding: 2rem;
 
-    &.loaded {
-        transition: background-color .2s linear;
-    }
+  &.loaded {
+    transition: background-color 0.2s linear;
+  }
 }
 
 a {
-    text-decoration: none;
-    color: var(--link-color);
+  text-decoration: none;
+  color: var(--link-color);
 }
 
-h1, h2 {
-    line-height: 1;
-    font-family: 'Bebas Neue', cursive;
-    color: var(--heading-color);
+h1,
+h2 {
+  line-height: 1;
+  font-family: "Bebas Neue", cursive;
+  color: var(--heading-color);
 }
 
 h1 {
-    font-size: 2.8rem;
+  font-size: 2.8rem;
 }
 
 h2 {
-    font-size: 1.9rem;
+  font-size: 1.9rem;
 }
