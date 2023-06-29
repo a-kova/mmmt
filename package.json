@@ -13,18 +13,18 @@
   "author": "A. Kovalchuk",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.1",
-    "@11ty/eleventy-img": "^2.0.1",
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-img": "^3.1.0",
     "@grimlink/eleventy-plugin-sass": "^1.0.3",
     "autoprefixer": "^10.4.7",
     "cross-env": "^7.0.3",
     "date-format": "^4.0.11",
     "postcss": "^8.4.14",
-    "postcss-cli": "^9.1.0",
+    "postcss-cli": "^10.1.0",
     "sass": "^1.53.0",
-    "stylelint": "^14.9.1",
-    "stylelint-config-standard": "^26.0.0",
-    "stylelint-config-standard-scss": "^5.0.0",
+    "stylelint": "^15.9.0",
+    "stylelint-config-standard": "^33.0.0",
+    "stylelint-config-standard-scss": "^9.0.0",
     "uniqid": "^5.4.0"
   }
 }
